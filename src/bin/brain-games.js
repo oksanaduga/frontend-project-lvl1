@@ -1,5 +1,4 @@
-#!/usr/bin/env nod
-import actual from '..';
+#!/usr/bin/env node
+import { welcome } from '..';
 
-console.log('Welcome to the Brain Games!');
-console.log(`Hello, ${actual}!`);
+welcome();

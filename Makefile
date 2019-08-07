@@ -5,4 +5,8 @@ start:
 publish:
 	npm publish --dry-run
 lint:
-	npx eslint 
+	npx eslint
+play:
+	npx babel-node src/bin/brain-even.js
+pr:
+	npx babel-node src/index.js
