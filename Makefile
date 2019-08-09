@@ -8,5 +8,4 @@ lint:
 	npx eslint
 play:
 	npx babel-node src/bin/brain-even.js
-pr:
-	npx babel-node src/index.js
+	
