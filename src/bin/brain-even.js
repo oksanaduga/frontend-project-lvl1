@@ -1,4 +1,5 @@
 #!/usr/bin/env node
-import { isEven } from '..';
+import frame from '..';
+import { description, even } from '../games/even';
 
-isEven();
+frame(even, description);

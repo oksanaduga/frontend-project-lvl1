@@ -1,4 +1,4 @@
 #!/usr/bin/env node
-import { brainGames } from '..';
+import frame from '..';
 
-brainGames();
+frame();
