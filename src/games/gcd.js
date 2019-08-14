@@ -3,32 +3,32 @@ import { rand } from '../utils';
 export const description = 'Find the greatest common divisor of given numbers.';
 
 export const gcd = () => {
-  const a = rand();
-  const b = rand();
-  const question = `${a} ${b}`;
-  let arra = [];
-  let arrb = [];
-  for (let i = 1; i <= a; i += 1) {
-    if (a % i === 0) {
-      arra.push(i);
+  const firstNum = rand();
+  const secondNum = rand();
+  const question = `${firstNum} ${secondNum}`;
+  let arrFirstNum = [];
+  let arrSecondNum = [];
+  for (let i = 1; i <= firstNum; i += 1) {
+    if (firstNum % i === 0) {
+      arrFirstNum.push(i);
     }
   }
-  for (let j = 1; j <= b; j += 1) {
-    if (b % j === 0) {
-      arrb.push(j);
+  for (let j = 1; j <= secondNum; j += 1) {
+    if (secondNum % j === 0) {
+      arrSecondNum.push(j);
     }
   }
-  const newArr = [];
-  for (let z = 0; z < arra.length; z += 1) {
-    for (let x = 0; x < arrb.length; x += 1) {
-      if (arra[z] === arrb[x]) {
-        newArr.push(arra[z]);
+  const arrForCommonFactor = [];
+  for (let z = 0; z < arrFirstNum.length; z += 1) {
+    for (let x = 0; x < arrSecondNum.length; x += 1) {
+      if (arrFirstNum[z] === arrSecondNum[x]) {
+        arrForCommonFactor.push(arrFirstNum[z]);
       }
     }
   }
   let answer = 1;
-  for (let c = 0; c < newArr.length; c += 1) {
-    answer *= Number(newArr[c]);
+  for (let c = 0; c < arrForCommonFactor.length; c += 1) {
+    answer *= Number(arrForCommonFactor[c]);
   }
   return [question, String(answer)];
 };

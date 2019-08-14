@@ -1,7 +1,14 @@
 {
   "name": "frontend-project-lvl1-oksana-duga",
   "version": "1.4.0",
-  "description": "",
+  "description": "This repository is mu first hexlet training project",
+  "keywords": [
+    "brain-calc",
+    "brain-even",
+    "brain-games",
+    "brain-gcd",
+    "brain-prime"
+  ],
   "main": "dist/index.js",
   "bin": {
     "brain-games": "dist/bin/brain-games.js",

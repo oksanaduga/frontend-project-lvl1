@@ -3,18 +3,18 @@ import { rand } from '../utils';
 export const description = 'Find the greatest common divisor of given numbers.';
 
 export const progression = () => {
-  const a = rand();
-  const b = rand();
-  let arr = [];
+  const firstNum = rand();
+  const secondNum = rand();
+  let arrForDivider = [];
   let count = 1;
-  for (let i = a; count < 9; i + b) {
-    arr.push(i);
+  for (let i = firstNum; count < 9; i + secondNum) {
+    arrForDivider.push(i);
     count += 1;
-    i += b;
+    i += secondNum;
   }
-  const elFromArray = arr[Math.floor(Math.random() * arr.length)];
-  const indexOfElFromArr = arr.indexOf(elFromArray);
-  const removed = arr.splice(indexOfElFromArr, 1, '..');
-  return [arr.join(' '), String(elFromArray)];
+  const elFromArray = arrForDivider[Math.floor(Math.random() * arrForDivider.length)];
+  const indexOfElFromArr = arrForDivider.indexOf(elFromArray);
+  const removed = arrForDivider.splice(indexOfElFromArr, 1, '..');
+  return [arrForDivider.join(' '), String(elFromArray)];
 };
 
