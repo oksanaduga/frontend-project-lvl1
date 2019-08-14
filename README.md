@@ -6,3 +6,4 @@ This repository is mu first hexlet training project
 [![asciicast](https://asciinema.org/a/261602.svg)](https://asciinema.org/a/261602)
 [![asciicast](https://asciinema.org/a/262162.svg)](https://asciinema.org/a/262162)
 <a href="https://asciinema.org/a/262359" target="_blank" data-size="big" data-speed="2"><img src="https://asciinema.org/a/262359.svg" /></a>
+<a href="https://asciinema.org/a/262412" target="_blank" data-speed="2"><img src="https://asciinema.org/a/262412.svg" /></a>
