@@ -8,12 +8,6 @@ const getName = () => readlineSync.question('May I have your name? ');
 
 const greeting = name => console.log(`Hello, ${name}`);
 
-const brainGames = () => {
-  welcome();
-  const name = getName();
-  greeting(name);
-};
-
 const frame = (func = 1, description = '') => {
   welcome();
   console.log(description);
