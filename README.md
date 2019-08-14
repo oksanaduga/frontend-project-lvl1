@@ -5,3 +5,4 @@ This repository is mu first hexlet training project
 [![Build Status](https://travis-ci.org/oksanaduga/frontend-project-lvl1.svg?branch=master)](https://travis-ci.org/oksanaduga/frontend-project-lvl1)
 [![asciicast](https://asciinema.org/a/261602.svg)](https://asciinema.org/a/261602)
 [![asciicast](https://asciinema.org/a/262162.svg)](https://asciinema.org/a/262162)
+<a href="https://asciinema.org/a/262359" target="_blank" data-size="big" data-speed="2"><img src="https://asciinema.org/a/262359.svg" /></a>
