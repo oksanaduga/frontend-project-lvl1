@@ -1,20 +1,21 @@
 import { rand } from '../utils';
+import frame from '..';
 
 export const description = 'Find the greatest common divisor of given numbers.';
 
 export const progression = () => {
-  const firstNum = rand();
-  const secondNum = rand();
-  let arrForDivider = [];
+  const valueBeforeDesired = rand();
+  const valueAfterDesired = rand();
+  let numbersOfProgression = [];
   let count = 1;
-  for (let i = firstNum; count < 9; i + secondNum) {
-    arrForDivider.push(i);
+  for (let i = valueBeforeDesired; count < 9; i + valueAfterDesired) {
+    numbersOfProgression.push(i);
     count += 1;
-    i += secondNum;
+    i += valueAfterDesired;
   }
-  const elFromArray = arrForDivider[Math.floor(Math.random() * arrForDivider.length)];
-  const indexOfElFromArr = arrForDivider.indexOf(elFromArray);
-  const removed = arrForDivider.splice(indexOfElFromArr, 1, '..');
-  return [arrForDivider.join(' '), String(elFromArray)];
+  const elementFromNumbersOfProgression = numbersOfProgression[Math.floor(Math.random() * numbersOfProgression.length)];
+  const indexOfElementFromArr = numbersOfProgression.indexOf(elementFromNumbersOfProgression);
+  const removed = numbersOfProgression.splice(indexOfElementFromArr, 1, '..');
+  return [numbersOfProgression.join(' '), String(elementFromNumbersOfProgression)];
 };
-
+export const brainProgression = () => frame(progression, description);

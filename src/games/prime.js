@@ -1,16 +1,22 @@
 import { rand } from '../utils';
+import frame from '..';
 
 export const description = 'Answer "yes" if given number is prime. Otherwise answer "no".';
 
-export const prime = () => {
-  const num = rand();
-  const arr = [];
+const isPrime = (num) => {
+  const dividersForNum = [];
   for (let i = 1; i <= num; i += 1) {
     if (num % i === 0) {
-      arr.push(i);
+      dividersForNum.push(i);
     }
   }
-  const answ = arr.length === 2 ? 'yes' : 'no';
+  return dividersForNum.length === 2;
+};
+
+export const prime = () => {
+  const num = rand();
+  const answ = isPrime(num) ? 'yes' : 'no';
   return [num, answ];
 };
+export const brainPrime = () => frame(prime, description);
 

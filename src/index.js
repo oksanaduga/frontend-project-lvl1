@@ -1,22 +1,17 @@
 import readlineSync from 'readline-sync';
 
-const welcome = () => {
+const frame = (func, description) => {
   console.log('Welcome to the Brain Games!');
-};
-
-const getName = () => readlineSync.question('May I have your name? ');
-
-const greeting = name => console.log(`Hello, ${name}`);
-
-const frame = (func = 1, description = '') => {
-  welcome();
-  console.log(description);
-  const name = getName();
-  greeting(name);
-  if (func === 1) {
+  if (typeof descripyion !== 'undefined') {
+    console.log(description);
+  }
+  const name = readlineSync.question('May I have your name? ');
+  console.log(`Hello, ${name}`);
+  if (typeof func === 'undefined') {
     return;
   }
-  for (let i = 0; i < 3; i += 1) {
+  const sumOfPlayQuesion = 3;
+  for (let i = 0; i < sumOfPlayQuesion; i += 1) {
     const [q, a] = func();
     console.log(`Question: ${q}`);
     const answer = readlineSync.question('Answer: ');

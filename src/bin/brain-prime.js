@@ -1,5 +1,4 @@
 #!/usr/bin/env node
-import frame from '..';
-import { description, prime } from '../games/prime';
+import { brainPrime } from '../games/prime';
 
-frame(prime, description);
+brainPrime();

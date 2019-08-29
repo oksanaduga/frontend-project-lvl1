@@ -1,5 +1,4 @@
 #!/usr/bin/env node
-import frame from '..';
-import { description, gcd } from '../games/gcd';
+import { brainGcd } from '../games/gcd';
 
-frame(gcd, description);
+brainGcd();

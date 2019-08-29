@@ -1,5 +1,4 @@
 #!/usr/bin/env node
-import frame from '..';
-import { description, calculator } from '../games/calc';
+import { brainCalc } from '../games/calc';
 
-frame(calculator, description);
+brainCalc();
