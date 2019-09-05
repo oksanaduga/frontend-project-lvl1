@@ -5,7 +5,7 @@ start:
 publish:
 	npm publish --dry-run
 lint:
-	npx eslint
+	npx eslint src/**/*.js
 play:
 	npx babel-node src/bin/brain-even.js
 calc:

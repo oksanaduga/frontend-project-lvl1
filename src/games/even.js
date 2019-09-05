@@ -1,11 +1,14 @@
-import { rand, isEven } from '../utils';
-import frame from '..';
+import { randomNumber } from '../utils';
+import play from '..';
 
-export const description = 'Answer "yes" if number even otherwise answer "no"';
+const description = 'Answer "yes" if number even otherwise answer "no"';
 
-export const createEvenQA = () => {
-  const question = rand();
+export const isEven = n => n % 2 === 0;
+
+const createIsEvenQuestionAnswer = () => {
+  const question = randomNumber();
   const rightAnswer = isEven(question) ? 'yes' : 'no';
   return [question, rightAnswer];
 };
-export const brainEven = () => frame(createEvenQA, description);
+const brainEven = () => play(createIsEvenQuestionAnswer, description);
+export default brainEven;

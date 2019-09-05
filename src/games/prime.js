@@ -1,11 +1,15 @@
-import { rand } from '../utils';
-import frame from '..';
+import { randomNumber } from '../utils';
+import play from '..';
 
-export const description = 'Answer "yes" if given number is prime. Otherwise answer "no".';
+const description = 'Answer "yes" if given number is prime. Otherwise answer "no".';
 
-const isPrime = (num) => {
+const getPrime = (num) => {
+  const divider = Math.floor(num / 2);
   const dividersForNum = [];
-  for (let i = 1; i <= num; i += 1) {
+  if (num % num === 0) {
+    dividersForNum.push(num);
+  }
+  for (let i = 1; i <= divider; i += 1) {
     if (num % i === 0) {
       dividersForNum.push(i);
     }
@@ -13,10 +17,11 @@ const isPrime = (num) => {
   return dividersForNum.length === 2;
 };
 
-export const prime = () => {
-  const num = rand();
-  const answ = isPrime(num) ? 'yes' : 'no';
-  return [num, answ];
+const isPrime = () => {
+  const question = randomNumber();
+  const answer = getPrime(question) ? 'yes' : 'no';
+  return [question, answer];
 };
-export const brainPrime = () => frame(prime, description);
+const brainPrime = () => play(isPrime, description);
 
+export default brainPrime;

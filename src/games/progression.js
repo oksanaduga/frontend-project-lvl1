@@ -1,21 +1,21 @@
-import { rand } from '../utils';
-import frame from '..';
+import { randomNumber, randomElement } from '../utils';
+import play from '..';
 
-export const description = 'Find the greatest common divisor of given numbers.';
+const description = 'Find the greatest common divisor of given numbers.';
 
-export const progression = () => {
-  const valueBeforeDesired = rand();
-  const valueAfterDesired = rand();
-  let numbersOfProgression = [];
-  let count = 1;
-  for (let i = valueBeforeDesired; count < 9; i + valueAfterDesired) {
-    numbersOfProgression.push(i);
-    count += 1;
-    i += valueAfterDesired;
+const progression = () => {
+  const startElement = randomNumber();
+  const progressionStep = randomNumber();
+  let progression = [];
+  const lengthProgression = 10;
+  for (let i = 1; i < lengthProgression; i += 1) {
+    progression.push(startElement + progressionStep * i);
   }
-  const elementFromNumbersOfProgression = numbersOfProgression[Math.floor(Math.random() * numbersOfProgression.length)];
-  const indexOfElementFromArr = numbersOfProgression.indexOf(elementFromNumbersOfProgression);
-  const removed = numbersOfProgression.splice(indexOfElementFromArr, 1, '..');
-  return [numbersOfProgression.join(' '), String(elementFromNumbersOfProgression)];
+  const elementFromNumbersOfProgression = randomElement(progression);
+  const indexToRemove = progression.indexOf(elementFromNumbersOfProgression);
+  progression.splice(indexToRemove, 1, '..');
+  return [progression.join(' '), String(progressionStep)];
 };
-export const brainProgression = () => frame(progression, description);
+const brainProgression = () => play(progression, description);
+
+export default brainProgression;
