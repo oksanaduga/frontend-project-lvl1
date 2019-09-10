@@ -13,8 +13,9 @@ const generateRoundData = () => {
     progression.push(startElement + progressionStep * i);
   }
   const hiddenElementIndex = randomNumber(progression.length);
-  progression.splice(hiddenElementIndex, 1, '..');
+
   const rightAnswer = String(progression[hiddenElementIndex]);
+  progression.splice(hiddenElementIndex, 1, '..');
   const question = progression.join(' ');
   return [question, rightAnswer];
 };
