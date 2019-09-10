@@ -1,4 +1,4 @@
-import { randomNumber, randomElement } from '../utils';
+import { randomNumber } from '../utils';
 import play from '..';
 
 const description = 'What is the result of the expression?';
@@ -9,14 +9,13 @@ const operations = [
   ['*', (a, b) => a * b],
 ];
 
-const generateRoundDate = () => {
+const generateRoundData = () => {
   const a = randomNumber();
   const b = randomNumber();
-  const [sign, func] = randomElement(operations);
+  const [sign, func] = operations[randomNumber(operations.length)];
   const question = `${a} ${sign} ${b}`;
   const rightAnswer = String(func(a, b));
   return [question, rightAnswer];
 };
 
-export default () => play(generateRoundDate, description);
-
+export default () => play(generateRoundData, description);

@@ -16,9 +16,9 @@ const isPrime = (num) => {
   return true;
 };
 
-const generateRoundDate = () => {
+const generateRoundData = () => {
   const question = randomNumber();
   const rightAnswer = isPrime(question) ? 'yes' : 'no';
   return [question, rightAnswer];
 };
-export default () => play(generateRoundDate, description);
+export default () => play(generateRoundData, description);

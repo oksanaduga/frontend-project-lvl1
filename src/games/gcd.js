@@ -8,12 +8,12 @@ const findGcd = (x, y) => {
   return x;
 };
 
-const generateRoundDate = () => {
+const generateRoundData = () => {
   const a = randomNumber();
   const b = randomNumber();
   const question = `${a} ${b}`;
   const rightAnswer = String(findGcd(a, b));
   return [question, rightAnswer];
 };
-export default () => play(generateRoundDate, description);
+export default () => play(generateRoundData, description);
 

@@ -1,5 +1,3 @@
-const randomNumber = () => Math.round(Math.random() * 100);
+const randomNumber = (max = 100) => Math.floor(Math.random() * max);
 
-const randomElement = array => array[Math.floor(Math.random() * array.length)];
-
-export { randomNumber, randomElement };
+export { randomNumber };

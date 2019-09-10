@@ -1,22 +1,21 @@
-import { randomNumber, randomElement } from '../utils';
+import { randomNumber } from '../utils';
 import play from '..';
 
 const description = 'Find the greatest common divisor of given numbers.';
 
 const lengthProgression = 10;
 
-const generateRoundDate = () => {
+const generateRoundData = () => {
   const startElement = randomNumber();
   const progressionStep = randomNumber();
   let progression = [];
   for (let i = 0; i < lengthProgression; i += 1) {
     progression.push(startElement + progressionStep * i);
   }
-  const elementFromNumbersOfProgression = randomElement(progression);
-  const hiddenElementIndex = progression.indexOf(elementFromNumbersOfProgression);
+  const hiddenElementIndex = randomNumber(progression.length);
   progression.splice(hiddenElementIndex, 1, '..');
-  const rightAnswer = String(progressionStep);
+  const rightAnswer = String(progression[hiddenElementIndex]);
   const question = progression.join(' ');
   return [question, rightAnswer];
 };
-export default () => play(generateRoundDate, description);
+export default () => play(generateRoundData, description);
