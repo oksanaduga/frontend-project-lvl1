@@ -1,19 +1,20 @@
 import readlineSync from 'readline-sync';
 
-const play = (makePair, description) => {
+const questionCount = 3;
+
+export default (generateRoundDate, description) => {
   console.log('Welcome to the Brain Games!');
   console.log(description);
   const name = readlineSync.question('May I have your name? ');
   console.log(`Hello, ${name}`);
-  const questionCount = 3;
   for (let i = 0; i < questionCount; i += 1) {
-    const [question, answer] = makePair();
+    const [question, answer] = generateRoundDate();
     console.log(`Question: ${question}`);
-    const answerForPrint = readlineSync.question('Answer: ');
-    if (answerForPrint === answer) {
+    const userAnswer = readlineSync.question('Answer: ');
+    if (userAnswer === answer) {
       console.log('Correct!');
     } else {
-      console.log(`"${answerForPrint}" is wrong answer ;(. Correct answer was "${answer}".`);
+      console.log(`"${userAnswer}" is wrong answer ;(. Correct answer was "${answer}".`);
       console.log(`Let's try again, ${name}!`);
       return;
     }
@@ -21,4 +22,3 @@ const play = (makePair, description) => {
   console.log(`Congratulations, ${name}!`);
 };
 
-export default play;

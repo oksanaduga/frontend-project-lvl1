@@ -3,25 +3,22 @@ import play from '..';
 
 const description = 'Answer "yes" if given number is prime. Otherwise answer "no".';
 
-const getPrime = (num) => {
-  const divider = Math.floor(num / 2);
-  const dividersForNum = [];
-  if (num % num === 0) {
-    dividersForNum.push(num);
+const isPrime = (num) => {
+  if (num <= 0) {
+    return false;
   }
-  for (let i = 1; i <= divider; i += 1) {
-    if (num % i === 0) {
-      dividersForNum.push(i);
+  const limiter = Math.floor(num / 2);
+  for (let i = 1; i <= limiter; i += 1) {
+    if (i !== num && i !== 1 && num % i === 0) {
+      return false;
     }
   }
-  return dividersForNum.length === 2;
+  return true;
 };
 
-const isPrime = () => {
+const generateRoundDate = () => {
   const question = randomNumber();
-  const answer = getPrime(question) ? 'yes' : 'no';
-  return [question, answer];
+  const rightAnswer = isPrime(question) ? 'yes' : 'no';
+  return [question, rightAnswer];
 };
-const brainPrime = () => play(isPrime, description);
-
-export default brainPrime;
+export default () => play(generateRoundDate, description);

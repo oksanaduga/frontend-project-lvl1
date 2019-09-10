@@ -9,7 +9,7 @@ const operations = [
   ['*', (a, b) => a * b],
 ];
 
-const calculator = () => {
+const generateRoundDate = () => {
   const a = randomNumber();
   const b = randomNumber();
   const [sign, func] = randomElement(operations);
@@ -18,6 +18,5 @@ const calculator = () => {
   return [question, rightAnswer];
 };
 
-const brainCalc = () => play(calculator, description);
+export default () => play(generateRoundDate, description);
 
-export default brainCalc;

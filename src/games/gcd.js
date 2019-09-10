@@ -8,13 +8,12 @@ const findGcd = (x, y) => {
   return x;
 };
 
-const getGcd = () => {
-  const startValueForFindGcd = randomNumber();
-  const nextValueForFindGcd = randomNumber();
-  const question = `${startValueForFindGcd} ${nextValueForFindGcd}`;
-  const answer = String(findGcd(startValueForFindGcd, nextValueForFindGcd));
-  return [question, answer];
+const generateRoundDate = () => {
+  const a = randomNumber();
+  const b = randomNumber();
+  const question = `${a} ${b}`;
+  const rightAnswer = String(findGcd(a, b));
+  return [question, rightAnswer];
 };
-const brainGcd = () => play(getGcd, description);
+export default () => play(generateRoundDate, description);
 
-export default brainGcd;
