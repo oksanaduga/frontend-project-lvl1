@@ -1,7 +1,8 @@
 # frontend-project-lvl1
 [![Maintainability](https://api.codeclimate.com/v1/badges/eec960a1b2bb37dd31f2/maintainability)](https://codeclimate.com/github/oksanaduga/frontend-project-lvl1/maintainability)
-
+[![Build Status](https://travis-ci.org/oksanaduga/frontend-project-lvl1.svg?branch=master)](https://travis-ci.org/oksanaduga/frontend-project-lvl1)
 This repository is my first hexlet training project
+
 Is the set of console games
 ## Setup
 ```bash
