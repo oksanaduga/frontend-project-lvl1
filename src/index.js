@@ -21,4 +21,3 @@ export default (generateRoundData, description) => {
   }
   console.log(`Congratulations, ${name}!`);
 };
-

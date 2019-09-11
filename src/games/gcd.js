@@ -3,7 +3,9 @@ import play from '..';
 
 const description = 'Find the greatest common divisor of given numbers.';
 
-const findGcd = (x, y) => {
+const findGcd = (a, b) => {
+  let x = a;
+  let y = b;
   while (y !== 0) y = x % (x = y);
   return x;
 };
@@ -16,4 +18,3 @@ const generateRoundData = () => {
   return [question, rightAnswer];
 };
 export default () => play(generateRoundData, description);
-

@@ -8,7 +8,7 @@ const lengthProgression = 10;
 const generateRoundData = () => {
   const startElement = randomNumber();
   const progressionStep = randomNumber();
-  let progression = [];
+  const progression = [];
   for (let i = 0; i < lengthProgression; i += 1) {
     progression.push(startElement + progressionStep * i);
   }
