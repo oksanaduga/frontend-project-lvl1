@@ -1,4 +1,4 @@
-import { randomNumber } from '../utils';
+import randomNumber from '../utils';
 import play from '..';
 
 const description = 'What is the result of the expression?';
@@ -12,9 +12,9 @@ const operations = [
 const generateRoundData = () => {
   const a = randomNumber();
   const b = randomNumber();
-  const [sign, func] = operations[randomNumber(operations.length)];
+  const [sign, operation] = operations[randomNumber(operations.length)];
   const question = `${a} ${sign} ${b}`;
-  const rightAnswer = String(func(a, b));
+  const rightAnswer = String(operation(a, b));
   return [question, rightAnswer];
 };
 
