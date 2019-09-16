@@ -12,11 +12,11 @@ const generateRoundData = () => {
   for (let i = 0; i < lengthProgression; i += 1) {
     progression.push(startElement + progressionStep * i);
   }
-  const hiddenElementIndex = randomNumber(progression.length);
-
-  const rightAnswer = String(progression[hiddenElementIndex]);
-  progression.splice(hiddenElementIndex, 1, '..');
+  const hiddenElement = progression[randomNumber(1, progression.length - 1)];
+  const rightAnswer = String(hiddenElement);
+  progression.splice(progression.indexOf(hiddenElement), 1, '..');
   const question = progression.join(' ');
   return [question, rightAnswer];
 };
+
 export default () => play(generateRoundData, description);

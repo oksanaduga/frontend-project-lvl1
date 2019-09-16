@@ -3,12 +3,7 @@ import play from '..';
 
 const description = 'Find the greatest common divisor of given numbers.';
 
-const findGcd = (a, b) => {
-  let x = a;
-  let y = b;
-  while (y !== 0) y = x % (x = y);
-  return x;
-};
+const findGcd = (a, b) => (b === 0 ? Math.abs(a) : findGcd(b, a % b));
 
 const generateRoundData = () => {
   const a = randomNumber();
@@ -17,4 +12,5 @@ const generateRoundData = () => {
   const rightAnswer = String(findGcd(a, b));
   return [question, rightAnswer];
 };
+
 export default () => play(generateRoundData, description);

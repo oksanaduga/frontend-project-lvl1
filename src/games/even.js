@@ -10,4 +10,5 @@ const generateRoundData = () => {
   const rightAnswer = isEven(question) ? 'yes' : 'no';
   return [question, rightAnswer];
 };
+
 export default () => play(generateRoundData, description);

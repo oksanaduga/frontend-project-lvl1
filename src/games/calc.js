@@ -12,7 +12,7 @@ const operations = [
 const generateRoundData = () => {
   const a = randomNumber();
   const b = randomNumber();
-  const [sign, operation] = operations[randomNumber(operations.length)];
+  const [sign, operation] = operations[randomNumber(0, operations.length - 1)];
   const question = `${a} ${sign} ${b}`;
   const rightAnswer = String(operation(a, b));
   return [question, rightAnswer];
